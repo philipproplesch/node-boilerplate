@@ -1,3 +1,7 @@
+function DownloadFile([string] $source, [string] $destination) {
+	(New-Object System.Net.WebClient).DownloadFile($source, $destination)
+}
+
 echo "Creating necessary folders"
 mkdir ./static
 mkdir ./static/images
@@ -14,7 +18,7 @@ cp ./templates/app/.gitignore ./.gitignore
 cp ./templates/app/config.json ./config.json
 cp ./templates/app/Makefile ./Makefile
 cp ./templates/test/stub.js ./test/stub.js
-(New-Object System.Net.WebClient).DownloadFile('https://raw.github.com/h5bp/html5-boilerplate/master/css/main.css', './static/css/style.css')
+DownloadFile 'https://raw.github.com/h5bp/html5-boilerplate/master/css/main.css' './static/css/style.css'
 cp ./templates/views/500.jade ./views/500.jade
 cp ./templates/views/404.jade ./views/404.jade
 cp ./templates/views/index.jade ./views/index.jade
