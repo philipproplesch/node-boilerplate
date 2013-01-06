@@ -1,5 +1,5 @@
 function DownloadFile([string] $source, [string] $destination) {
-	(New-Object System.Net.WebClient).DownloadFile($source, $destination)
+  (New-Object System.Net.WebClient).DownloadFile($source, $destination)
 }
 
 echo "Creating necessary folders"
